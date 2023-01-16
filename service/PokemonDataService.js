@@ -152,7 +152,7 @@ exports.updateStatus = function(body) {
       }
       else{
         console.log(res);
-        resolve(id);
+        resolve(res);
       }
     });
   });

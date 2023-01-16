@@ -3,10 +3,10 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'pokemon-mysql',
     user: 'root',
-    database: "pokemon",
-    password: ''
+    password: '12345678',
+    database: "pokemon"
 });
 
 connection.connect (function (err) {
@@ -17,4 +17,4 @@ connection.connect (function (err) {
 console.log('Database connection active.');
 });
 
-module.exports = connection;
+module.exports = connection

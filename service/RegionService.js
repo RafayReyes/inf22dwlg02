@@ -1,5 +1,6 @@
 'use strict';
 
+var sql = require('../utils/db.js');
 
 /**
  * Says cardinal point
@@ -21,27 +22,3 @@ exports.cardinalpoint = function(name) {
     });
   });
 }
-
-
-
-/**
- * Finds region by pokemon
- *
- * pokemons String 
- * returns Region
- **/
-exports.regionofpokemon = function(pokemons) {
-  return new Promise(function(resolve, reject) {
-    sql.query("SELECT * FROM regions WHERE poke_id = (SELECT * FROM pokemons WHERE id = ?)", [id], function (err, res){
-      if(err){
-        console.log(err);
-        reject(err);
-      }
-      else{
-        console.log(res);
-        resolve(res);
-      }
-    });
-  });
-}
-

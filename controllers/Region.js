@@ -12,13 +12,3 @@ module.exports.cardinalpoint = function cardinalpoint (req, res, next, name) {
       utils.writeJson(res, response);
     });
 };
-
-module.exports.regionofpokemon = function regionofpokemon (req, res, next, pokemons) {
-  Region.regionofpokemon(pokemons)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
-};
